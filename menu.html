@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/menu.css">
+    <link rel="icon" href="assets/logo.jpg" type="image/ico">
+    <title>Ranna Bati: Menu</title>
+</head>
+<body>
+    <header>
+        <div class="logo-section">
+            <div class="logo">
+                <img src="assets/logo.jpg" alt="Brand Logo">
+            </div>
+            <h1 class="brand-name">Ranna Bati</h1>
+        </div>
+        <nav class="menu">
+            <a href="index.html">Home</a>
+            <a href="contact.html">Contact</a>
+            <a href="menu.html">Menu</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="grid">
+            <div class="card">
+                <img src="assets/plates.png" alt="Dish 1">
+                <h2>Dish Name 1</h2>
+                <p>$10.00</p>
+            </div>
+            <div class="card">
+                <img src="assets/plates.png" alt="Dish 2">
+                <h2>Dish Name 2</h2>
+                <p>$12.00</p>
+            </div>
+            <div class="card">
+                <img src="assets/plates.png" alt="Dish 3">
+                <h2>Dish Name 3</h2>
+                <p>$8.00</p>
+            </div>
+            <div class="card">
+                <img src="assets/plates.png" alt="Dish 4">
+                <h2>Dish Name 4</h2>
+                <p>$15.00</p>
+            </div>
+            <div class="card">
+                <img src="assets/plates.png" alt="Dish 5">
+                <h2>Dish Name 5</h2>
+                <p>$9.00</p>
+            </div>
+            <div class="card">
+                <img src="assets/plates.png" alt="Dish 6">
+                <h2>Dish Name 6</h2>
+                <p>$11.00</p>
+            </div>
+            <div class="card">
+                <img src="assets/plates.png" alt="Dish 7">
+                <h2>Dish Name 7</h2>
+                <p>$14.00</p>
+            </div>
+            <div class="card">
+                <img src="assets/plates.png" alt="Dish 8">
+                <h2>Dish Name 8</h2>
+                <p>$13.00</p>
+            </div>
+            <div class="card">
+                <img src="assets/plates.png" alt="Dish 9">
+                <h2>Dish Name 9</h2>
+                <p>$10.00</p>
+            </div>
+        </div>
+    </div>
+
+    <button id="scrollDown" class="scroll-button">&#8595;</button>
+
+    <script>
+        // Smooth scroll to next section on button click
+        document.getElementById('scrollDown').addEventListener('click', function() {
+            window.scrollBy({
+                top: window.innerHeight, // Scroll down by the height of the viewport
+                behavior: 'smooth' // Smooth scroll effect
+            });
+        });
+    </script>
+</body>
+</html>

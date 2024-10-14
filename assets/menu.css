@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 15px;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.brand-name {
+    font-size: 24px;
+    color: #333;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+    flex-wrap: nowrap; /* Prevents wrapping (stacking) of buttons */
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    padding: 10px 15px;
+}
+
+.menu a:hover {
+    color: red;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .brand-name {
+        margin-top: 10px;
+        font-size: 20px;
+    }
+
+    .menu {
+        gap: 10px;
+    }
+
+    .menu a {
+        font-size: 16px;
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        width: 60px;
+        height: 60px;
+    }
+
+    .brand-name {
+        font-size: 18px;
+    }
+
+    .menu {
+        gap: 5px; /* Reduce gap between buttons */
+        justify-content: space-evenly;
+        width: 100%; /* Spread buttons across the width of the screen */
+    }
+
+    .menu a {
+        font-size: 14px;
+        padding: 8px 10px;
+        flex-shrink: 1; /* Makes sure the buttons shrink to fit the screen */
+    }
+
+    .big-card {
+        padding: 15px;
+        font-size: 14px;
+    }
+}
+
+/* New grid layout for menu items */
+.container {
+    padding: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Creates 3 columns */
+    gap: 20px; /* Spacing between items */
+}
+
+.card {
+    background-color: #fff; /* Card background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for effect */
+    padding: 10px; /* Padding inside cards */
+    text-align: center; /* Center text */
+}
+
+.card img {
+    width: 100%; /* Image takes full width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px 10px 0 0; /* Rounded top corners */
+}
+
+.card h2 {
+    margin: 10px 0; /* Margin for spacing */
+    font-size: 18px; /* Dish name font size */
+}
+
+.card p {
+    color: #333; /* Price color */
+    font-size: 16px; /* Price font size */
+}
+
+/* Responsive adjustments for the grid */
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .grid {
+        grid-template-columns: 1fr; /* 1 column for small screens */
+    }
+
+    .card {
+        padding: 15px; /* Increase padding for better touch targets */
+    }
+
+    .card h2 {
+        font-size: 16px; /* Adjust font size for dish names */
+    }
+
+    .card p {
+        font-size: 14px; /* Adjust font size for prices */
+    }
+}
+
+/* Scroll button styles */
+.scroll-button {
+    position: fixed; /* Fixed position on the screen */
+    bottom: 20px; /* Space from the bottom */
+    right: 20px; /* Space from the right */
+    background-color: #f8f9fa; /* Background color */
+    border: none; /* No border */
+    border-radius: 50%; /* Round button */
+    width: 50px; /* Set fixed width */
+    height: 50px; /* Set fixed height */
+    display: flex; /* Flexbox to center the content */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    font-size: 24px; /* Size of arrow */
+    cursor: pointer; /* Cursor change on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for effect */
+    transition: background-color 0.3s; /* Transition effect */
+}
+
+.scroll-button:hover {
+    background-color: #e2e6ea; /* Change background on hover */
+}
