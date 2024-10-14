@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
 * {
     margin: 0;
     padding: 0;
@@ -45,7 +43,7 @@ header {
 .menu {
     display: flex;
     gap: 20px;
-    flex-wrap: nowrap; /* Prevents wrapping (stacking) of buttons */
+    flex-wrap: nowrap;
 }
 
 .menu a {
@@ -92,15 +90,15 @@ header {
     }
 
     .menu {
-        gap: 5px; /* Reduce gap between buttons */
+        gap: 5px;
         justify-content: space-evenly;
-        width: 100%; /* Spread buttons across the width of the screen */
+        width: 100%;
     }
 
     .menu a {
         font-size: 14px;
         padding: 8px 10px;
-        flex-shrink: 1; /* Makes sure the buttons shrink to fit the screen */
+        flex-shrink: 1;
     }
 
     .big-card {
@@ -116,78 +114,162 @@ header {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Creates 3 columns */
-    gap: 20px; /* Spacing between items */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
 }
 
 .card {
-    background-color: #fff; /* Card background */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for effect */
-    padding: 10px; /* Padding inside cards */
-    text-align: center; /* Center text */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    text-align: center;
 }
 
+/* Make images circular */
 .card img {
-    width: 100%; /* Image takes full width */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 10px 10px 0 0; /* Rounded top corners */
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: block;
 }
 
 .card h2 {
-    margin: 10px 0; /* Margin for spacing */
-    font-size: 18px; /* Dish name font size */
+    margin: 10px 0;
+    font-size: 18px;
 }
 
 .card p {
-    color: #333; /* Price color */
-    font-size: 16px; /* Price font size */
+    color: #333;
+    font-size: 16px;
 }
 
 /* Responsive adjustments for the grid */
 @media (max-width: 768px) {
     .grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 480px) {
     .grid {
-        grid-template-columns: 1fr; /* 1 column for small screens */
+        grid-template-columns: 1fr;
     }
 
     .card {
-        padding: 15px; /* Increase padding for better touch targets */
+        padding: 15px;
     }
 
     .card h2 {
-        font-size: 16px; /* Adjust font size for dish names */
+        font-size: 16px;
     }
 
     .card p {
-        font-size: 14px; /* Adjust font size for prices */
+        font-size: 14px;
     }
 }
 
 /* Scroll button styles */
 .scroll-button {
-    position: fixed; /* Fixed position on the screen */
-    bottom: 20px; /* Space from the bottom */
-    right: 20px; /* Space from the right */
-    background-color: #f8f9fa; /* Background color */
-    border: none; /* No border */
-    border-radius: 50%; /* Round button */
-    width: 50px; /* Set fixed width */
-    height: 50px; /* Set fixed height */
-    display: flex; /* Flexbox to center the content */
-    align-items: center; /* Center vertically */
-    justify-content: center; /* Center horizontally */
-    font-size: 24px; /* Size of arrow */
-    cursor: pointer; /* Cursor change on hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for effect */
-    transition: background-color 0.3s; /* Transition effect */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #f8f9fa;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
 }
 
 .scroll-button:hover {
-    background-color: #e2e6ea; /* Change background on hover */
+    background-color: #e2e6ea;
+}
+
+/* Popup modal styles */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    max-width: 300px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.popup-content img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.popup-content h2 {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.popup-content p {
+    font-size: 16px;
+    color: #333;
+}
+
+/* Back button styles */
+.back-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.back-button:hover {
+    color: red;
+}
+
+#popup-details {
+    text-align: left;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.popup-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.popup-content li {
+    margin-bottom: 8px;
+}
+
+.popup-content img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
 }

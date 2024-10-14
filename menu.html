@@ -24,62 +24,87 @@
 
     <div class="container">
         <div class="grid">
-            <div class="card">
-                <img src="assets/plates.png" alt="Dish 1">
-                <h2>Dish Name 1</h2>
-                <p>$10.00</p>
+            <div class="card" onclick="showPopup('fried-rice.jpg', 'Fried Rice', friedRiceDetails)">
+                <img src="img/fried-rice.jpg" alt="Fried Rice">
+                <h2>Fried Rice</h2>
+                <p>Click For More Info</p>
             </div>
-            <div class="card">
-                <img src="assets/plates.png" alt="Dish 2">
-                <h2>Dish Name 2</h2>
-                <p>$12.00</p>
+            <div class="card" onclick="showPopup('rice.jpg', 'Rice Combos', riceCombosDetails)">
+                <img src="img/rice.jpg" alt="Rice Combos">
+                <h2>Rice Combos</h2>
+                <p>Click For More Info</p>
             </div>
-            <div class="card">
-                <img src="assets/plates.png" alt="Dish 3">
-                <h2>Dish Name 3</h2>
-                <p>$8.00</p>
+            <div class="card" onclick="showPopup('biriyani.jpg', 'Biriyani', biriyaniDetails)">
+                <img src="img/biriyani.jpg" alt="Biriyani">
+                <h2>Biriyani</h2>
+                <p>Click For More Info</p>
             </div>
-            <div class="card">
-                <img src="assets/plates.png" alt="Dish 4">
-                <h2>Dish Name 4</h2>
-                <p>$15.00</p>
-            </div>
-            <div class="card">
-                <img src="assets/plates.png" alt="Dish 5">
-                <h2>Dish Name 5</h2>
-                <p>$9.00</p>
-            </div>
-            <div class="card">
-                <img src="assets/plates.png" alt="Dish 6">
-                <h2>Dish Name 6</h2>
-                <p>$11.00</p>
-            </div>
-            <div class="card">
-                <img src="assets/plates.png" alt="Dish 7">
-                <h2>Dish Name 7</h2>
-                <p>$14.00</p>
-            </div>
-            <div class="card">
-                <img src="assets/plates.png" alt="Dish 8">
-                <h2>Dish Name 8</h2>
-                <p>$13.00</p>
-            </div>
-            <div class="card">
-                <img src="assets/plates.png" alt="Dish 9">
-                <h2>Dish Name 9</h2>
-                <p>$10.00</p>
+            <div class="card" onclick="showPopup('polao.jpg', 'Polao', polaoDetails)">
+                <img src="img/polao.jpg" alt="Polao">
+                <h2>Polao</h2>
+                <p>Click For More Info</p>
             </div>
         </div>
     </div>
 
     <button id="scrollDown" class="scroll-button">&#8595;</button>
 
+    <!-- Modal for item details -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <button class="back-button" onclick="hidePopup()">&#8592;</button>
+            <img id="popup-img" src="" alt="Dish Image">
+            <h2 id="popup-title"></h2>
+            <div id="popup-details"></div>
+        </div>
+    </div>
+
     <script>
+        // Menu details as JavaScript objects
+        const friedRiceDetails = `
+            <ul>
+                <li>Fried Rice + Chicken Kosha / Chilli Chicken (4 pc) + Salad + Cold Drinks @199</li>
+                <li>Fried Rice + Chicken Kosha / Chilli Chicken + Fish Fry + Sweet + Cold Drinks @299</li>
+                <li>Fried Rice + Mutton Kosha (4 pc) + Fish Fry + Salad + Cold Drinks @399</li>
+            </ul>`;
+
+        const polaoDetails = `
+            <ul>
+                <li>Polao + Chicken Kosha (4 pc) + Salad + Cold Drinks @199</li>
+                <li>Polao + Chicken Kosha + Fish Fry + Sweet + Cold Drinks @299</li>
+                <li>Polao + Mutton Kosha (4 pc) + Fish Fry + Salad + Cold Drinks @399</li>
+            </ul>`;
+
+        const riceCombosDetails = `
+            <ul>
+                <li>Dehradun Rice + Veg Dal + Aloo Bhaja + Torkari + Chutney + Papad + Sweet @125</li>
+                <li>Add Katla Fish @175, Bhetki @100, Chingri Malaikari @175, Papda Fish @175, Ilish Fish @325</li>
+            </ul>`;
+
+        const biriyaniDetails = `
+            <ul>
+                <li>Chicken Biriyani + Fish Fry + Salad + Sweet + Cold Drinks @299</li>
+                <li>Mutton Biriyani + Chicken Chop + Fish Fry + Sweet + Cold Drinks @399</li>
+            </ul>`;
+
+        // Function to show the popup with dynamic content
+        function showPopup(imgSrc, title, details) {
+            document.getElementById('popup-img').src = 'img/' + imgSrc;
+            document.getElementById('popup-title').textContent = title;
+            document.getElementById('popup-details').innerHTML = details;
+            document.getElementById('popup').style.display = 'flex';
+        }
+
+        // Function to hide the popup
+        function hidePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+
         // Smooth scroll to next section on button click
         document.getElementById('scrollDown').addEventListener('click', function() {
             window.scrollBy({
-                top: window.innerHeight, // Scroll down by the height of the viewport
-                behavior: 'smooth' // Smooth scroll effect
+                top: window.innerHeight,
+                behavior: 'smooth'
             });
         });
     </script>
