@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/menu.css">
+    <link rel="icon" href="assets/logo.jpg" type="image/ico">
+    <title>Ranna Bati: Menu</title>
+</head>
+<body>
+    <header>
+        <div class="logo-section">
+            <div class="logo">
+                <img src="assets/logo.jpg" alt="Brand Logo">
+            </div>
+            <a href="index.html" style="text-decoration: none;">
+                <h1 class="brand-name">Ranna Bati</h1>
+            </a>
+        </div>
+        <nav class="menu">
+            <a href="index.html">Home</a>
+            <a href="contact.html">Contact</a>
+            <a href="menu.html">Menu</a>
+            <a href="reviews.html">Reviews</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="grid">
+            <div class="card" onclick="showPopup('fried-rice.jpg', 'Fried Rice', friedRiceDetails)">
+                <b><p>
+                    "খুব ভালো লাগলো। খুব স্বাদের হয়েছে। আবার অর্ডার করব নিশ্চয়ই। তোমাদের ব্যবহার আমায় আকৃষ্ট করেছে।"
+                </p></b>
+                <h2>- Sampa Roy</h2>
+                <p>⭐⭐⭐⭐⭐</p>
+            </div>
+            <div class="card" onclick="showPopup('rice.jpg', 'Rice Combos', riceCombosDetails)">
+                <b><p>
+                    "খুবই ভালো ছিলো তোমার বানানো বড়া মালপোয়া নাড়ু....অনেক ধন্যবাদ তোমায়....আমার গোপালের জন্মদিনের এই আয়োজনে তোমার বানানো খাবার আমি গোপালের ভোগে সাজিয়ে দিতে পেরেছি...... ভালো থেকো ❤। আমি আবার অর্ডার করবো।"
+                </p></b>
+                <h2>- Sreemoyee Kar</h2>
+                <p>⭐⭐⭐⭐⭐</p>
+            </div>
+            <div class="card" onclick="showPopup('biriyani.jpg', 'Biriyani', biriyaniDetails)">
+                <b><p>"খাবারের স্বাদ দারুণ ছিল সেটা নিয়ে কোন কথা হবে না। আমি আবার অর্ডার করব।"</p></b>
+                <h2>- Tanima Shom</h2>
+                <p>⭐⭐⭐⭐⭐</p>
+            </div>
+            <div class="card" onclick="showPopup('polao.jpg', 'Polao', polaoDetails)">
+                <b><p>"Overall Food is awesome 👏 next time lagle apnak call kore nebo, thank you"</p></b>
+                <h2>- Sujit Sen</h2>
+                <p>⭐⭐⭐⭐⭐</p>
+            </div>
+            <div class="card" onclick="showPopup('polao.jpg', 'Polao', polaoDetails)">
+                <b><p>
+                    "This is my genuine review about ranna bati cloud kitchen. I order many things like fried rice, pulao, chicken kosha, fish fry. What I love about this food is very homely. The taste was finger-licking. This chicken kosha was mind-blowing. Each and every food was made with pure heart and was so tasty. Lokhi is a very good cook and a pure soul… keep it up. Shine like a star ⭐"
+                </p></b>
+                <h2>- Shilpi Roy</h2>
+                <p>⭐⭐⭐⭐⭐</p>
+            </div>
+            <div class="card" onclick="showPopup('polao.jpg', 'Polao', polaoDetails)">
+                <b><p>
+                    "বেশ কয়েক দিন ধরে আপনার এই হোম ডেলিভারি ব্যবসার কথা শুনছিলাম, অবশেষে ভাবলাম একদিন বাড়িতে টেস্ট করাই যাক। তো গত ১৭ তারিখে আপনার হাতের রান্না খেলাম (মিক্সড ফ্রায়েড রাইস আর চিলি চিকেন), এই রকম ঘরোয়া রান্না অনেক বড় বড় রেস্টুরেন্টকেও হার মানিয়ে দেবে। আপনার এই ছোট্ট উদ্যোগ আরও বড় হোক, এই শুভ কামনা রইল।"
+                </p></b>
+                <h2>- Pinaki Das Chaklader</h2>
+                <p>⭐⭐⭐⭐⭐</p>
+            </div>
+        </div>
+    </div>
+
+    <button id="scrollDown" class="scroll-button">&#8595;</button>
+
+    <!-- Modal for item details -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <button class="back-button" onclick="hidePopup()">&#8592;</button>
+            <img id="popup-img" src="" alt="Dish Image">
+            <h2 id="popup-title"></h2>
+            <div id="popup-details"></div>
+        </div>
+    </div>
+</body>
+</html>

@@ -190,3 +190,16 @@ a:hover {
 .icon-item:hover i {
     color: #f39c12; /* Change icon color on hover (example: orange) */
 }
+
+@media (max-width: 480px) {
+    .menu {
+        flex-wrap: wrap; /* Allow wrapping */
+        justify-content: center; /* Center items */
+        gap: 10px;
+    }
+
+    .menu a {
+        flex-basis: 30%; /* Adjust width as necessary */
+        text-align: center; /* Center-align text */
+    }
+}
