@@ -79,5 +79,14 @@ T
             <div id="popup-details"></div>
         </div>
     </div>
+
+    <script>
+        document.getElementById('scrollDown').addEventListener('click', function() {
+            window.scrollBy({
+                top: window.innerHeight,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 </body>
 </html>
